@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aila Florería</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #fafafa;
+      color: #000;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5em;
+      color: #000000;
+    }
+
+    .subtitulo {
+     font-size: 1.2rem;
+     margin-top: 5px;
+     color: #555;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      padding: 15px;
+      border-bottom: 1px solid rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: #333;
+      text-decoration: none;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: #f7496c;
+    }
+
+    .page {
+      display: none;
+      padding: 80px 20px;
+      text-align: center;
+      animation: fade 0.5s ease;
+    }
+
+    .active {
+      display: block;
+    }
+
+    @keyframes fade {
+      from { opacity:0; transform:translateY(10px); }
+      to { opacity:1; transform:translateY(0); }
+    }
+
+    
+   .hero {
+    padding: 120px 20px;
+    min-height: 60vh; 
+  
+    background:
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url("IMG/AILAFLORERIA.jfif");
+  
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    color: white;
+    text-align: center;
+   }
+
+    h1, h2 {
+      font-family: 'Cormorant Garamond', serif;
+      color: #fcfafa;
+    }
+
+    .btn-custom {
+      margin-top: 30px;
+      padding: 12px 30px;
+      border: 1px solid #ccf66b;
+      background: transparent;
+      color: #bdff53;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn-custom:hover {
+      background: #f8242f;
+      color: #000;
+      transform: scale(1.05);
+    }
+
+    .games {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+      margin-top: 40px;
+    }
+
+    .card-custom {
+      background: #111;
+      color: white;
+      padding: 30px;
+      width: 260px;
+      border: 1px solid rgba(255,255,255,0.1);
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .card-custom:hover {
+      border-color: #ff4a56;
+      transform: translateY(-8px) scale(1.02);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      color: #555;
+    }
+
+    .card-custom img {
+     width: 800%;
+     height: 300px;
+     object-fit: cover; 
+     border-radius: 10px;
+     margin-bottom: 10px;
+    }
+
+    .PERSONALIZADO {
+     display: flex;
+     justify-content: center; 
+     gap: 100px; 
+     flex-wrap: wrap;
+    }
+
+    #carouselFlores img {
+     height: 600px;
+     object-fit: cover;
+     border-radius: 15px;
+    }
+
+    .catalogo {
+     padding: 100px 20px;
+     min-height: 60vh;
+
+     background:
+     linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+     url("IMG/catalogo.jfif");
+     background-size: cover;
+     background-position: center;
+     background-repeat: no-repeat;
+
+     color: white;
+     text-align: center;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+<header>AILA Florería</header>
+<p class="subtitulo">Mariana Munguía Galindo :)</p>
+
+<nav>
+  <a onclick="showPage('INICIO')">INICIO</a>
+  <a onclick="showPage('PERSONALIZADO')">PERSONALIZADO</a>
+  <a onclick="showPage('CATÁLOGO')">CATÁLOGO</a>
+  <a onclick="showPage('CONTACTO')">CONTACTO</a>
+</nav>
+
+<!-- HOME -->
+<div id="INICIO" class="page active hero">
+  <h1>Variedad. Exclusividad. Libertad.</h1>
+  <p>AILA Florería cualquier tipo de flor.</p>
+  <button class="btn-custom" onclick="showPage('CARRUSEL')">ENTRAR</button>
+</div>
+
+<!-- CARRUSEL -->
+<div id="CARRUSEL" class="page">
+  <h2>Nuestros arreglos</h2>
+
+  <div id="carouselFlores" class="carousel slide" data-bs-ride="carousel">
+    
+    <div class="carousel-inner">
+
+      <div class="carousel-item active">
+        <img src="IMG/carrusel1.jfif" class="d-block w-100">
+      </div>
+
+      <div class="carousel-item">
+        <img src="IMG/carrusel2.jfif" class="d-block w-100">
+      </div>
+
+      <div class="carousel-item">
+        <img src="IMG/carrusel3.jfif" class="d-block w-100">
+      </div>
+
+    </div>
+
+    <!-- Botones -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselFlores" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselFlores" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+
+  </div>
+</div>
+
+<!-- PERSONALIZADO -->
+<div id="PERSONALIZADO" class="page">
+  <h2>Arreglos personalizados</h2>
+  <div class="PERSONALIZADO">
+    <div class="card-custom">
+      <img src="IMG/clasico.jfif" class="img-fluid">
+      <h2>Ramos clásicos</h2>
+      <p>Elegantes y tradicionales</p>
+    </div>
+
+
+    <div class="card-custom">
+      <img src="IMG/moderno.jfif" class="img-fluid">
+      <h2>Diseño moderno</h2>
+      <p>Creatividad única</p>
+    </div>
+
+
+    <div class="card-custom">
+      <img src="IMG/bodas.jfif" class="img-fluid">
+      <h2>Eventos</h2>
+      <p>Bodas, XV y más</p>
+    </div>
+  </div>
+</div>
+
+<!-- CATALOGO -->
+<div id="CATÁLOGO" class="page catalogo">
+  <h2>Flores Internacionales</h2>
+  <p>Flores de todo el mundo, atención personalizada y lujo total.</p>
+  <button class="btn-custom" onclick="alert('Catálogo próximamente 🌸')">Ver catálogo</button>
+</div>
+
+<!-- CONTACTO -->
+<div id="CONTACTO" class="page">
+  <h2>CONTACTO</h2>
+  <p>Email: ailafloreria@email.com</p>
+  <p>Telefono: 4613132222</p>
+</div>
+
+<footer>© 2026 AILA Florería — Experiencia Única</footer>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
